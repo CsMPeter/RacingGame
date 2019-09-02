@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -48,5 +50,8 @@ public class App
         System.out.println("Car1 name: " + car.name);*/
 
         car = car2;
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        System.out.println("Input from user: " + text);
     }
 }
