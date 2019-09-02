@@ -24,10 +24,13 @@ public class App
 
         car.engine = engine;
 
-        System.out.println(car.name);
+       /* System.out.println(car.name);
         System.out.println(car.traveledDistance);
-        System.out.println(car.running);
+        System.out.println(car.running);*/
         car.name = "Skoda";
+
+        car.accelerate(60, 1);
+
         Car car2 = new Car();
         car2.name = "Golf";
         car2.doorCount = 2;
