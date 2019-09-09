@@ -28,6 +28,8 @@ public class App
        // car.running = false;
         //car.traveledDistance = 0;
 
+        System.out.println("Car object: " + car.toString());
+
         Engine engine2 = new Engine();
         engine.manufacturer = "Volkswagen";
         engine.capacity = 1600;
@@ -75,6 +77,11 @@ public class App
 
         System.out.println("Total count in Car class: " + Car.totalCount);*/
 
+        HybridCar hybridCar = new HybridCar();
+
+
+
+        System.out.println("Hybrid:"+ hybridCar.accelerate(30));
 
     }
 }
