@@ -29,4 +29,10 @@ public class HybridCar extends AutoVehicle{
     protected Object clone() throws CloneNotSupportedException {
         return new HybridCar();
     }
+
+    public void fly()
+    {
+
+        System.out.println("Yeeey flying!");
+    }
 }
