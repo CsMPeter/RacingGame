@@ -28,7 +28,7 @@ public class App
        // car.running = false;
         //car.traveledDistance = 0;
 
-        System.out.println("Car object: " + car.toString());
+       // System.out.println("Car object: " + car.toString());
 
         Engine engine2 = new Engine();
         engine.manufacturer = "Volkswagen";
@@ -38,7 +38,7 @@ public class App
         System.out.println(car.setTraveledDistance());
         System.out.println(car.setRunning());*/
 
-        car.accelerate(60, 1);
+        //car.accelerate(60, 1);
 
         Car car2 = new Car(engine2);
         car2.setName("Golf");
@@ -54,37 +54,41 @@ public class App
         System.out.println("Car1 name: " + car.getName());*/
 
         //car = car2;
-        Scanner scanner = new Scanner(System.in);
-        String text = scanner.nextLine();
-        System.out.println("Input from user: " + text);
+//        Scanner scanner = new Scanner(System.in);
+//        String text = scanner.nextLine();
+//        System.out.println("Input from user: " + text);
 
 
-        System.out.println("Static variables example:");
+//        System.out.println("Static variables example:");
+//
+//
+//        //we should only call static variables from the class itself
+//        //not from a variable containing an object of that class
+//        /*car.totalCount = 1;
+//
+//        System.out.println("Total count in car: " + car.totalCount);
+//
+//        car.totalCount = 2;
+//
+//
+//        System.out.println("Total count in car after setting car2: " + car.totalCount);
+//
+//        System.out.println("Totalcount in car 2: " + car2.totalCount);
+//
+//        System.out.println("Total count in Car class: " + Car.totalCount);*/
+////      variable type decides what method can be called
+//        Vehicle hybridCar = new HybridCar();
+//        hybridCar.setName("Cheater");
+//
+////        method implementation from objects class not from variables class
+//
+//        System.out.println("Hybrid:"+ hybridCar.accelerate(30));
+////        type casting
+//        ((HybridCar) hybridCar).fly();
 
+        Game game = new Game();
 
-        //we should only call static variables from the class itself
-        //not from a variable containing an object of that class
-        /*car.totalCount = 1;
-
-        System.out.println("Total count in car: " + car.totalCount);
-
-        car.totalCount = 2;
-
-
-        System.out.println("Total count in car after setting car2: " + car.totalCount);
-
-        System.out.println("Totalcount in car 2: " + car2.totalCount);
-
-        System.out.println("Total count in Car class: " + Car.totalCount);*/
-//      variable type decides what method can be called
-        Vehicle hybridCar = new HybridCar();
-        hybridCar.setName("Cheater");
-
-//        method implementation from objects class not from variables class
-
-        System.out.println("Hybrid:"+ hybridCar.accelerate(30));
-//        type casting
-        ((HybridCar) hybridCar).fly();
+        game.start();
 
     }
 }
