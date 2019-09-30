@@ -28,11 +28,13 @@ public class Game {
         int competitorsWithoutFuel = 0;
 
         while (winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
+            System.out.println("New round...\n");
 
 
 //          for each / enhanced for
-            for (Vehicle vehicle : competitors
-            ) {
+            for (Vehicle vehicle : competitors)
+            {
+                System.out.println("It's" + vehicle.getName() + "'s turn.");
                 double speed = getAccelerationSpeedFromUser();
                 vehicle.accelerate(speed, 1);
 
