@@ -23,17 +23,32 @@ public class Game {
         Track selectedTrack = getSelectedTrackFromUser();
 
         initializeCompetitors();
-//          for each / enhanced for
-        for (Vehicle vehicle : competitors
-             ) {
-            double speed = getAccelerationSpeedFromUser();
-            vehicle.accelerate(speed,1);
-        }
 
+        boolean winnerNotKnown = true;
+        int competitorsWithoutFuel = 0;
+
+        while (winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
+
+
+//          for each / enhanced for
+            for (Vehicle vehicle : competitors
+            ) {
+                double speed = getAccelerationSpeedFromUser();
+                vehicle.accelerate(speed, 1);
+
+                if (selectedTrack.getLength() <= vehicle.getTraveledDistance()) {
+                    winnerNotKnown = false;
+                    System.out.println("The winner is: " + vehicle.getName());
+                    break;
+                }
+                if (vehicle.getFuelLevel() <= 0)
+                    competitorsWithoutFuel++;
+            }
+        }
 
     }
 
-    private double getAccelerationSpeedFromUser(){
+    private double getAccelerationSpeedFromUser() {
 
         System.out.println("Please enter acceleration speed: ");
         Scanner scanner = new Scanner(System.in);
@@ -42,7 +57,7 @@ public class Game {
             return scanner.nextDouble();
         } catch (InputMismatchException e) {
             System.out.println("The value you have entered is invalid.");
-           return getAccelerationSpeedFromUser();
+            return getAccelerationSpeedFromUser();
         }
 
     }
@@ -57,7 +72,7 @@ public class Game {
         try {
             int userChoice = scanner.nextInt();
             return tracks[userChoice - 1];
-        } catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("You have entered an invalid number.");
             // recursion - a method calling itself
             return getSelectedTrackFromUser();
